@@ -20,12 +20,12 @@ return {
             G.GAME.starting_params.joker_slots = 1
         end,
         calculate = function(self,card,context)
-            if context.end_of_round and G.GAME.blind.boss and not context.individual and not context.repetition and self.get_current_deck_key() ~= "b_garb_byss" then
+            if context.buying_card and context.card.ability.set == "Voucher" and self.get_current_deck_key() ~= "b_garb_byss" then
                 G.jokers.config.card_limit = G.jokers.config.card_limit + 1
                 play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
                 play_sound('garb_bisso')    
                 card_eval_status_text(G.jokers, 'extra', nil, nil, nil, {message = "+1 Slots!", colour = G.C.DARK_EDITION})
-            elseif context.end_of_round and G.GAME.blind.boss and not context.individual and not context.repetition and self.get_current_deck_key() == "b_garb_byss" then
+            elseif context.buying_card and context.card.ability.set == "Voucher" and self.get_current_deck_key() == "b_garb_byss" then
                 G.hand.config.card_limit = G.hand.config.card_limit + 1
                 card_eval_status_text(G.hand, 'extra', nil, nil, nil, {message = "+1 Size!", colour = G.C.DARK_EDITION})                    
             end

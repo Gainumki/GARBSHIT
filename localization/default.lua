@@ -226,14 +226,14 @@ return {
                 text = {
                     "Start with {C:attention}1{} Joker slot",
                     "Gain {C:attention}+#1#{} Joker slot",
-                    "at the end of each Ante"
+                    "when buying any Voucher"
                 },
             },
 			sleeve_garb_byss_alt = {
 				name = "Byss Sleeve",
                 text = {
                     "Gain {C:attention}+#1#{} hand size",
-                    "at the end of each Ante"
+                    "when buying any Voucher"
                 },
 			},
 
@@ -531,6 +531,7 @@ return {
                 "{C:dark_edition,E:2}Valoky{} - Obsession",
                 "{C:dark_edition,E:2}Astro{} - Kirby",
                 "{C:dark_edition,E:2}MrCr33ps{} - Sacred Heart",
+                "{C:dark_edition,E:2}SaraMint{} - Senza Nome",
                 " ",
                 "{s:1.5,C:attention,E:2}Also Try:",
                 "{C:dark_edition,E:1}Rofflatro, Victin's Collection, Aikoyori's Shenanigans{}",
