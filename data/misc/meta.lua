@@ -121,10 +121,10 @@ return {
         volume = 0.4
     }, SMODS.Sound {key = "bubble", path = {["default"] = "bubble.ogg"}},
 
-    SMODS.Sound {
-        key = "kirby_powerup",
-        path = {["default"] = "kirby_powerup.ogg"}
-    }, SMODS.Sound {key = "ping", path = {["default"] = "ping.ogg"}},
+    SMODS.Sound {key = "kirby_powerup",path = {["default"] = "kirby_powerup.ogg"}}, 
+    SMODS.Sound {key = "ping", path = {["default"] = "ping.ogg"}},
+    SMODS.Sound {key = "coin", path = {["default"] = "coin.ogg"}},
+
     SMODS.Sound {key = "knock", path = {["default"] = "knock.ogg"}},
     SMODS.Sound {key = "click", path = {["default"] = "click.ogg"}},
     SMODS.Sound {key = "shiny", path = {["default"] = "shiny.ogg"}},

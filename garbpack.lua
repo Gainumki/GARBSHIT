@@ -9,6 +9,23 @@ has_played_silksong =
         'ppData/LocalLow/Team Cherry/Hollow Knight Silksong/838914769/user1.dat'
 has_played_silksong = NFS.getInfo(has_played_silksong)
 
+local easedollars_ref = ease_dollars
+function ease_dollars(mod, instant)
+    G.GAME.BloomModifier = G.GAME.BloomModifier or 1
+    if to_big(mod) > to_big(0) and G.GAME.BloomModifier > 1 then
+        G.E_MANAGER:add_event(Event({
+        trigger = 'after',
+        delay = 1,
+        func = function()
+            play_sound('garb_coin', 1.6, 0.4)
+            easedollars_ref(math.floor(mod*(G.GAME.BloomModifier-1)), instant)
+            return true
+        end
+        }))
+    end
+    easedollars_ref(mod, instant)
+end
+
 function jimboReturned()
     if pseudorandom('ohheyitsthegun') > 0.80 and G.GAME.objectivelysold and
         (#G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit) then

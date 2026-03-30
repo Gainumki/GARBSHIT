@@ -58,7 +58,7 @@ target = "functions/button_callbacks.lua"
 pattern = '''G.FUNCS.select_blind = function(e)'''
 position = "after"
 payload = '''
-garb_funisinfinite = true
+garb_funisinfinite = false
 if garb_funisinfinite then  
     play_sound('cancel', 0.7, 0.8)
     G.deck:remove()
