@@ -8,17 +8,14 @@ return {
     no_rank = false,
     always_scores = false,
 	
-	config = {extra = {active = false }},
+	config = {card_limit = 1,extra = {active = false }},
 	
   update = function(self, card)
     if not card.R_active and not card.debuff and card.area and card.area == G.hand then 
-      G.hand:change_size(1)
-      draw_card(G.deck,G.hand, 90,'up', true)
       card.R_active = true
     end
 
     if card.R_active and card.area and card.area ~= G.hand then 
-      G.hand:change_size(-1)
       card.R_active = false
     end
   end,
@@ -30,7 +27,6 @@ return {
   remove_from_deck = function(self, card, from_debuff)
     if card.R_active then
       card.R_active = false
-      G.hand:change_size(-1)
     end
   end,
 

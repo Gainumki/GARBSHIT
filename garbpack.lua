@@ -957,6 +957,7 @@ end
 
 function scale_blind(amount)
     local amount = amount or 1
+    local pos = (amount > 0) and '+' or ''
     G.E_MANAGER:add_event(Event({
         trigger = 'after',
         delay = 0.2,
@@ -969,13 +970,12 @@ function scale_blind(amount)
                                                    G.GAME.blind.chips)
                 G.GAME.blind.chips = new_chips
                 G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-
                 local chips_UI = G.hand_text_area.blind_chips
                 G.FUNCS.blind_chip_UI_scale(G.hand_text_area.blind_chips)
                 G.HUD_blind:recalculate()
 
                 attention_text({
-                    text = '+' .. mod_text,
+                    text = pos .. mod_text,
                     scale = 0.8,
                     hold = 0.7,
                     cover = chips_UI.parent,

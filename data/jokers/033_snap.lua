@@ -37,7 +37,7 @@ return {
       
       calculate = function(self, card, context)
         if context.selling_self and G.STATE == G.STATES.SELECTING_HAND then
-            scale_blind(card.ability.extra.difficulty)
+            scale_blind(-card.ability.extra.difficulty)
             play_sound('garb_snap', 1)
             return {
               message = "Snap!",
