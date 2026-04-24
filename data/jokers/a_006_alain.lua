@@ -58,7 +58,7 @@ return {
     end
     ]]
     for i = 1, 2 do
-      if context.selling_card and G.consumeables.highlighted[1].ability.set == "Planet" and (not G.consumeables.highlighted[1].edition or (G.consumeables.highlighted[1].edition.key ~= "e_negative")) then
+      if context.selling_card and context.card == G.consumeables.highlighted[1] and G.consumeables.highlighted[1].ability.set == "Planet" and (not G.consumeables.highlighted[1].edition or (G.consumeables.highlighted[1].edition.key ~= "e_negative")) then
         local new_card = copy_card(G.consumeables.highlighted[1], nil, nil, nil, true)
         new_card:set_edition('e_negative', true)
         new_card:add_to_deck()

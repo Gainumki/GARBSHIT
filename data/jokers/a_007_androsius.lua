@@ -6,7 +6,7 @@ return {
     text = {
       "This Joker gains",
       "{X:mult,C:white} X#1# {} Mult every time",
-      "a {C:stamp}Stamp{} card is used",
+      "a {C:garb_Stamp}Stamp{} card is used",
       "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)"
     },
     unlock = {
@@ -36,7 +36,7 @@ return {
   end,
 
   calculate = function(self, card, context)
-    if context.using_consumeable and context.consumeable.ability.set == 'Stamp' and not context.blueprint then
+    if context.using_consumeable and context.consumeable.ability.set == 'garb_Stamp' and not context.blueprint then
       card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
           return {
             message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.Xmult } },

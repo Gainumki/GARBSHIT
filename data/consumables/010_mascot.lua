@@ -1,13 +1,13 @@
 return {
  SMODS.Consumable {
   key = 'mascot',
-  set = 'Stamp',
+  set = 'garb_Stamp',
   loc_txt = {
     name = 'Mascot',
     text = {
       "Exchange selected Joker",
       "for up to {C:attention}#1#{} random",
-      "{C:stamp}Stamp{} cards",
+      "{C:garb_Stamp}Stamp{} cards",
       "{C:inactive}(Must have room)"
     }
   },
@@ -32,7 +32,7 @@ return {
         G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.4, func = function()
             if G.consumeables.config.card_limit > #G.consumeables.cards then
                 play_sound('timpani')
-                local card = SMODS.create_card{set = "Stamp", no_edition = true}
+                local card = SMODS.create_card{set = "garb_Stamp", no_edition = true}
                 G.consumeables:emplace(card)
                 card:juice_up(0.3, 0.5)
             end

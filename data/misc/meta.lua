@@ -3,7 +3,7 @@ return {
     -- META STUFF
 
     SMODS.UndiscoveredSprite {
-        key = 'Stamp',
+        key = 'garb_Stamp',
         atlas = 'Stamps',
         pos = {x = 0, y = 0}
     },
@@ -107,7 +107,7 @@ return {
         volume = 0.5
     },
 
-    SMODS.Sound {key = "honk", path = {["default"] = "honk.ogg"}, volume = 0.8},
+    SMODS.Sound {key = "honk", path = {["default"] = config.repainted and "xperror.ogg" or "honk.ogg"}, volume = 0.8},
 
     SMODS.Sound {key = "snap", path = {["default"] = "snap_nodrama.ogg"}},
 
@@ -140,7 +140,7 @@ return {
         select_music_track = function()
             return
                 G.pack_cards and G.pack_cards.cards and G.pack_cards.cards[1] and
-                    G.pack_cards.cards[1].ability.set == "Stamp"
+                    G.pack_cards.cards[1].ability.set == "garb_Stamp"
         end
     }, SMODS.Sound {
         key = "music_minigame",
@@ -177,7 +177,7 @@ return {
         end
     }, SMODS.Sound {
         key = "music_calliope",
-        path = {["default"] = "music_calliope.ogg"},
+        path = {["default"] = config.repainted and "music_clippy.ogg" or "music_calliope.ogg"},
         sync = false,
         pitch = 1,
         select_music_track = function()
@@ -205,7 +205,7 @@ return {
     }, 
     SMODS.Sound({key = "music_hall", path = 'music_hall.ogg', sync = false, pitch = 1, volume = 0.7, select_music_track = function() return (G.STATE == G.STATES.garb_SPECIAL_THANKS) end}),
 
-    SMODS.Atlas({key = "fish", path = "fish.png", px = 71, py = 95}),
+    SMODS.Atlas({key = "fish", path = (config.repainted and "repainted/" or "").."fish.png", px = 71, py = 95}),
 
     SMODS.Shader {
         key = 'fish',

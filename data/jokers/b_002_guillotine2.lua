@@ -26,7 +26,7 @@ return {
         perishable_compat = false, --can it be perishable
   
       calculate = function(self, card, context)
-        if context.after or context.end_of_round and to_big(G.GAME.chips) > 1000000000 and context.cardarea == G.jokers then 
+        if (context.after or context.end_of_round) and to_big(G.GAME.chips) > 1000000000 and context.cardarea == G.jokers then 
           G.E_MANAGER:add_event(Event({trigger = "after", delay = 0.1, func = function()
           check_for_unlock({type = 'beheading'})
           card:juice_up()

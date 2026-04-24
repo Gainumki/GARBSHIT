@@ -193,15 +193,15 @@ return {
                 name = "Doodle Sleeve",
                 text = {
                     "Start run with the",
-                    "{C:stamp,T:v_garb_postcard}#1#{} voucher",
-                    "and a {C:stamp,T:c_garb_mascot}#2#{} card"
+                    "{C:garb_Stamp,T:v_garb_postcard}#1#{} voucher",
+                    "and a {C:garb_Stamp,T:c_garb_mascot}#2#{} card"
                 },
             },
 			sleeve_garb_doodle_alt = {
 				name = "Doodle Sleeve",
                 text = {
                     "Start run with the",
-                    "{C:stamp,T:v_garb_guano}#1#{} voucher",
+                    "{C:garb_Stamp,T:v_garb_guano}#1#{} voucher",
                 },
 			},
             sleeve_garb_cycle = {
@@ -437,7 +437,7 @@ return {
                     "{C:inactive,s:0.7}collection while holding shift to select it!)"
                 },
                 unlock = {
-                    "Use a {C:stamp,T:c_garb_vintage}Vintage Stamp{} on",
+                    "Use a {C:garb_Stamp,T:c_garb_vintage}Vintage Stamp{} on",
                     "a {E:1,C:legendary}Legendary{} Joker"
                 }
             },
@@ -450,7 +450,7 @@ return {
                     "{C:inactive,s:0.8}(SELECTED: {C:dark_edition,s:0.8}#2#{C:inactive,s:0.8})"
                 },
                 unlock = {
-                    "Use a {C:stamp,T:c_garb_vintage}Vintage Stamp{} on",
+                    "Use a {C:garb_Stamp,T:c_garb_vintage}Vintage Stamp{} on",
                     "a {E:1,C:legendary}Legendary{} Joker"
                 }
             },
@@ -471,8 +471,8 @@ return {
                 name = "Doodle Deck",
                 text = {
                     "Start run with the",
-                    "{C:stamp,T:v_garb_postcard}#1#{} voucher",
-                    "and a {C:stamp,T:c_garb_mascot}#2#{} card"
+                    "{C:garb_Stamp,T:v_garb_postcard}#1#{} voucher",
+                    "and a {C:garb_Stamp,T:c_garb_mascot}#2#{} card"
                 },
             },
             b_garb_byss = {

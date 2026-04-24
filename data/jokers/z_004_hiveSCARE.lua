@@ -3,7 +3,9 @@ return {
             key = 'hiveSCARE',
             loc_txt = {
               name = 'True Hivemind',
-              text = {
+              text = config.repainted and {
+                "You Got {C:red,s:1.5}Garb'd{}"
+              } or {
                 "{C:red,s:1.5}YOU{} are compromised"
               }
             },

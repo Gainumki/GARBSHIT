@@ -4,7 +4,7 @@ SMODS.Voucher{
     loc_txt = {
       name = 'Postal Service',
       text = {
-        "{C:stamp}Stamp{} cards appear",
+        "{C:garb_Stamp}Stamp{} cards appear",
         "{C:attention}#1#X{} more frequently",
         "in the shop"
     }

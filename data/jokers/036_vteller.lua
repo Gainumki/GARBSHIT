@@ -50,7 +50,7 @@ return {
             }
       end
   
-      if context.before and G.GAME.dollars > card.ability.extra.dollars then
+      if context.before and to_big(G.GAME.dollars) > to_big(card.ability.extra.dollars) then
         card.ability.extra.Xmult = 1
         return {
           message = localize('k_reset'),

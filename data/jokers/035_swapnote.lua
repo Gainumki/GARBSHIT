@@ -6,7 +6,7 @@ return {
       text = {
         "This Joker gains",
         "{C:chips}+#1#{} Chips every time",
-        "a {C:stamp}Stamp{} card is used",
+        "a {C:garb_Stamp}Stamp{} card is used",
         "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)"
       }
     },
@@ -27,7 +27,7 @@ return {
     end,
   
     calculate = function(self, card, context)
-      if context.using_consumeable and context.consumeable.ability.set == 'Stamp' and not context.blueprint then
+      if context.using_consumeable and context.consumeable.ability.set == 'garb_Stamp' and not context.blueprint then
         card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_gain
             return {
               message = localize { type = 'variable', key = 'a_chips', vars = { card.ability.extra.chips } },

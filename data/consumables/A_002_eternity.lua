@@ -12,7 +12,7 @@ return {
 
   atlas = 'GarbConsumables', pos = { x = 3, y = 0 },
   hidden = true, 
-  soul_set = 'Stamp', 
+  soul_set = 'garb_Stamp', 
   soul_pos = { x = 4, y = 0 },
 
     config = {extra = { max_highlighted = 1}},

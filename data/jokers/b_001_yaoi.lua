@@ -3,11 +3,11 @@ return {
       key = 'yaoi',
       loc_txt = {
         name = 'Bobburga Yaoi',
-        text = {
+        text = { 
             "Scored {C:attention}Enhanced{} cards create",
             "random {C:dark_edition}Negative{} consumables",
-            "Using {C:dark_edition}Negative{} consumables {C:red}explodes{}",
-            "all other {C:dark_edition}Negative{} consumables"
+            "Using or selling {C:dark_edition}Negative{} consumables",
+            "{C:red}explodes{} all other {C:dark_edition}Negative{} consumables"
         },
       },
       config = { extra = { } },
@@ -46,7 +46,7 @@ return {
           end
         end
 
-        if context.using_consumeable and context.consumeable.edition and context.consumeable.edition.key == "e_negative" then
+        if context.using_consumeable and context.consumeable.edition and context.consumeable.edition.key == "e_negative" or (context.selling_card and context.card.ability.consumeable) then
             for k, v in pairs(G.consumeables.cards) do 
                 if v.edition and v.edition.key == "e_negative" then
                     v:explode()

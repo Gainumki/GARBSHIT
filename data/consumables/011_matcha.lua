@@ -1,7 +1,7 @@
 return {
  SMODS.Consumable {
   key = 'matcha',
-  set = 'Stamp',
+  set = 'garb_Stamp',
   loc_txt = {
     name = 'Matcha',
     text = {
