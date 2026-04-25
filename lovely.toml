@@ -399,6 +399,29 @@ badges[#badges + 1] = create_badge(((card.ability.name == 'Pluto' or card.abilit
 match_indent = true
 
 
+# Poll rarity stack overflow fix
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/utils.lua"]'''
+pattern = '''function SMODS.poll_rarity(_pool_key, _rand_key)'''
+position = "at"
+payload = '''
+function SMODS.poll_rarity(_pool_key, _rand_key, fix_overflow)
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/utils.lua"]'''
+pattern = '''local _pool = get_current_pool("Joker", v.key, false, nil)'''
+position = "at"
+payload = ''' 
+local _pool = {}
+if (not fix_overflow) then
+    _pool = get_current_pool("Joker", v.key, false, nil)
+end
+'''
+match_indent = true
 
 # Golden Carrot
 [[patches]]
@@ -409,8 +432,8 @@ position = "after"
 payload = '''
 if G.jokers and next(SMODS.find_card("j_garb_goldcarrot")) and _type == 'Joker' then
     for i = 1, (3*#SMODS.find_card("j_garb_goldcarrot")) do
-        if rarity < 3 then
-            rarity = SMODS.poll_rarity("Joker", 'rarity'..G.GAME.round_resets.ante..(_append or ''))
+        if type(rarity) == 'number' and rarity < 3 then
+            rarity = SMODS.poll_rarity("Joker", 'rarity'..G.GAME.round_resets.ante..(_append or ''), true)
         end
     end
 end
